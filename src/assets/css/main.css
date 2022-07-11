@@ -1,0 +1,81 @@
+.mr-origin-branch,
+.mr-target-branch {
+  position: relative;
+  margin-top: 12px;
+}
+
+.mr-origin-branch h4,
+.mr-target-branch h4 {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgb(150, 154, 164);
+}
+
+.mr-origin-branch-input,
+.mr-target-branch-input {
+  margin-top: 6px;
+}
+
+.mr-origin-branch-select,
+.mr-target-branch-select {
+  position: absolute;
+  display: none;
+  width: 100%;
+  max-height: 180px;
+  padding: 0;
+  border: 1px solid #484c50;
+  border-radius: 4px;
+  list-style: none;
+  overflow: auto;
+  background: #323335;
+  z-index: 1;
+}
+
+.mr-origin-branch-select.show,
+.mr-target-branch-select.show {
+  display: block;
+}
+
+.mr-origin-branch-select-item,
+.mr-target-branch-select-item {
+  width: 100%;
+  padding: 4px;
+  font-size: 10px;
+  word-break: break-all;
+  cursor: pointer;
+}
+
+.mr-origin-branch-select-item:hover,
+.mr-target-branch-select-item:hover {
+  background: #232427;
+  cursor: pointer;
+}
+
+.mr-checkbox-wrapper {
+  margin-top: 16px;
+}
+
+.mr-push-current-branch,
+.mr-new-origin-branch {
+  margin-bottom: 4px;
+}
+
+.mr-push-current-branch label,
+.mr-new-origin-branch label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgb(150, 154, 164);
+}
+
+.mr-push-current-branch-checkbox,
+.mr-new-origin-branch-checkbox {
+  cursor: pointer;
+}
+
+.mr-create-mr-btn,
+.mr-open-repo-btn {
+  margin-top: 16px;
+}
