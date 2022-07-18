@@ -126,6 +126,7 @@ class GitlabMRViewProvider {
           <script>
             var branches = ${JSON.stringify(branches)};
           </script>
+
           <script src="${scriptUri}"></script>
         </body>
       </html>

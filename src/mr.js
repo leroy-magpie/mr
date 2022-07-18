@@ -26,8 +26,15 @@ function getSearchParams(originBranch, targetBranch) {
 
 function getMergeUrl(originBranch, targetBranch) {
   const projectUrl = getProjectUrl();
-  const searchParams = getSearchParams(originBranch, targetBranch);
-  return `https://${projectUrl}/-/merge_requests/new?${searchParams}`;
+
+  if (projectUrl.startsWith('git.garena.com')) {
+    const searchParams = getSearchParams(originBranch, targetBranch);
+    return `https://${projectUrl}/-/merge_requests/new?${searchParams}`;
+  }
+
+  if (projectUrl.startsWith('github.com')) {
+    return `https://${projectUrl}/compare/${targetBranch}...${originBranch}}`;
+  }
 }
 
 async function openMR(originBranch, targetBranch) {
