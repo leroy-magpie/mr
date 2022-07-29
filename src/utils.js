@@ -1,5 +1,4 @@
 const vscode = require('vscode');
-const opener = require('opener');
 
 const { getProjectUrl, openMR } = require('./mr');
 
@@ -51,7 +50,7 @@ async function getRemoteBranchesAsync() {
 function openRepo() {
   const projectUrl = getProjectUrl();
   const repoUrl = `https://${projectUrl}`;
-  opener(repoUrl);
+  vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(repoUrl))
 }
 
 async function createMR({

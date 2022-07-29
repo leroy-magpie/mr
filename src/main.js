@@ -1,9 +1,7 @@
-//@ts-check
-
-// This script will be run within the webview itself
-// It cannot access the main VS Code APIs directly.
 (function () {
   const vscode = acquireVsCodeApi();
+
+  const preState = vscode.getState() || {};
 
   const originBranchInput = document.querySelector('.mr-origin-branch-input');
   const originBranchSelect = document.querySelector('.mr-origin-branch-select');
@@ -20,6 +18,9 @@
 
   const createMRBtn = document.querySelector('.mr-create-mr-btn');
   const openRepoBtn = document.querySelector('.mr-open-repo-btn');
+
+  pushCurBranch.checked = preState.pushCurBranch;
+  newOriginBranch.checked = newOriginBranch.pushCurBranch;
 
   function getBranches(value) {
     const reg = new RegExp(value, 'ig');
@@ -124,6 +125,20 @@
 
   originBranchInput.addEventListener('keydown', handleKeyDown);
   targetBranchInput.addEventListener('keydown', handleKeyDown);
+
+  pushCurBranch.addEventListener('change', () => {
+    vscode.setState({
+      ...vscode.getState(),
+      pushCurBranch: pushCurBranch.checked,
+    });
+  });
+
+  newOriginBranch.addEventListener('change', () => {
+    vscode.setState({
+      ...vscode.getState(),
+      newOriginBranch: newOriginBranch.checked,
+    });
+  });
 
   createMRBtn.addEventListener('click', () => createMR());
 

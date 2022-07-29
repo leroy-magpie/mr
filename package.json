@@ -11,7 +11,7 @@
     "Other"
   ],
   "icon": "src/assets/icons/git-logo.png",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "engines": {
     "vscode": "^1.34.0"
   },
@@ -90,8 +90,5 @@
     "mocha": "^9.1.3",
     "typescript": "^4.4.4",
     "@vscode/test-electron": "^1.6.2"
-  },
-  "dependencies": {
-    "opener": "^1.5.2"
   }
 }

@@ -1,5 +1,4 @@
 const vscode = require('vscode');
-const opener = require('opener');
 
 function getRepo() {
   const gitExtension = vscode.extensions.getExtension('vscode.git').exports;
@@ -40,8 +39,7 @@ function getMergeUrl(originBranch, targetBranch) {
 
 async function openMR(originBranch, targetBranch) {
   const mergeUrl = getMergeUrl(originBranch, targetBranch);
-
-  opener(mergeUrl);
+  vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(mergeUrl))
 }
 
 module.exports = {
