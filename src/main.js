@@ -23,8 +23,7 @@
   newOriginBranch.checked = newOriginBranch.pushCurBranch;
 
   function getBranches(value) {
-    const reg = new RegExp(value, 'ig');
-    return branches.filter((branch) => reg.test(branch));
+    return branches.filter((branch) => new RegExp(value, 'ig').test(branch));
   }
 
   function genSelectItem(value, select, classname) {

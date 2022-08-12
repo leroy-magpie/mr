@@ -11,7 +11,7 @@
     "Other"
   ],
   "icon": "src/assets/icons/git-logo.png",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "engines": {
     "vscode": "^1.34.0"
   },
